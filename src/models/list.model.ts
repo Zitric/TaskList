@@ -3,15 +3,15 @@ import { ItemList } from "./item-list.model";
 export class List {
 
   id: number;
-  title: string;
+  name: string;
   created: Date;
   completedAt: Date;
   completed: boolean;
   items: ItemList[];
 
-  constructor( title: string ) {
+  constructor( name: string ) {
 
-    this.title = title;
+    this.name = name;
 
     this.completed = false;
     this.created = new Date();

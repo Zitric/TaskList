@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // Components
 import { ToDoComponent } from "../pages/to-do/to-do.component";
 import { CompletedComponent } from "../pages/completed/completed.component";
+import { AddComponent } from "../pages/add/add.component";
 
 // Servicies
 import { TaskListService } from "../providers/task-list.service";
@@ -20,7 +21,8 @@ import { TaskListService } from "../providers/task-list.service";
     MyApp,
     TabsPage,
     ToDoComponent,
-    CompletedComponent
+    CompletedComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
@@ -31,13 +33,14 @@ import { TaskListService } from "../providers/task-list.service";
     MyApp,
     TabsPage,
     ToDoComponent,
-    CompletedComponent
+    CompletedComponent,
+    AddComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     TaskListService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule {}

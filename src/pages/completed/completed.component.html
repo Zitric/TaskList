@@ -1,12 +1,15 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Completed</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <h2>Hello Completed</h2>
-
+  <ion-list>
+    <button ion-item *ngFor="let list of service.lists" (click)="listSelected(list)">
+      {{ list.name }}
+    </button>
+  </ion-list>
 
 </ion-content>

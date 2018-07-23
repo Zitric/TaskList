@@ -1,12 +1,22 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>To Do</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <h2>Hello ToDo</h2>
+  <ion-list>
+    <button ion-item *ngFor="let list of service.lists" (click)="listSelected(list)">
+      {{ list.name }}
+    </button>
+  </ion-list>
 
+  <ion-fab bottom right>
+    <button ion-fab (click)="addList()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+
+  </ion-fab>
 
 </ion-content>

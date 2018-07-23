@@ -4,12 +4,17 @@ import { List } from '../models/list.model';
 @Injectable()
 export class TaskListService {
 
-  List: list[] = [];
+  lists: List[] = [];
 
   constructor() {
 
+    const stonesList = new List('Get the infinity stones' );
+    const heroesList = new List( 'Heroes to defeat' );
 
-    console.log('Task List Services start');
+    this.lists.push( stonesList, heroesList );
+    console.log( this.lists );
+
+
   }
 
 }
