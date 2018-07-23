@@ -3,21 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+// Components
+import { ToDoComponent } from "../pages/to-do/to-do.component";
+import { CompletedComponent } from "../pages/completed/completed.component";
+
+// Servicies
+import { TaskListService } from "../providers/task-list.service";
+
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    TabsPage,
+    ToDoComponent,
+    CompletedComponent
   ],
   imports: [
     BrowserModule,
@@ -26,14 +29,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    TabsPage,
+    ToDoComponent,
+    CompletedComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    TaskListService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
