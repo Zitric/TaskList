@@ -8,13 +8,29 @@ export class TaskListService {
 
   constructor() {
 
-    const stonesList = new List('Get the infinity stones' );
-    const heroesList = new List( 'Heroes to defeat' );
-
-    this.lists.push( stonesList, heroesList );
-    console.log( this.lists );
-
+    this.loadStorage();
 
   }
 
+  addList( list: List ) {
+    this.lists.push( list );
+    this.saveStorage();
+  }
+
+  deleteList( list: List ) {
+    this.lists = this.lists.filter( res => {
+      return res.id !== list.id;
+    });
+  }
+
+  saveStorage() {
+    localStorage.setItem('data', JSON.stringify( this.lists ));
+  }
+
+  loadStorage() {
+
+    if( localStorage.getItem( 'data' )) {
+      this.lists = JSON.parse( localStorage.getItem( 'data' ));
+    }
+  }
 }

@@ -17,12 +17,15 @@ export class ToDoComponent {
 
   listSelected( list: List ) {
     console.log('List',list);
+    this.navCtrl.push( AddComponent, {
+      name: list.name,
+      list: list
+    });
   }
 
   addList() {
-    // this.navCtrl.push( AddComponent );
-    const alert = this.alertCtrl.create({
 
+    const alert = this.alertCtrl.create({
       title: 'New List',
       message: 'Name of the new list',
       inputs: [{
@@ -49,6 +52,13 @@ export class ToDoComponent {
 
     });
     alert.present();
+  }
+
+  deleteList( list: List ) {
+    // this.service.lists.splice( index, 1 );
+    // this.service.saveStorage();
+    this.service.deleteList( list );
+    
   }
 
 }
