@@ -12,9 +12,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ToDoComponent } from "../pages/to-do/to-do.component";
 import { CompletedComponent } from "../pages/completed/completed.component";
 import { AddComponent } from "../pages/add/add.component";
+import { ListsComponent } from "../components/lists/lists.component";
 
 // Servicies
 import { TaskListService } from "../providers/task-list.service";
+
+// Pipes
+import { FilterCompletePipe } from "../pipes/filter-complete/filter-complete";
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { TaskListService } from "../providers/task-list.service";
     TabsPage,
     ToDoComponent,
     CompletedComponent,
-    AddComponent
+    AddComponent,
+    FilterCompletePipe,
+    ListsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,8 @@ import { TaskListService } from "../providers/task-list.service";
     TabsPage,
     ToDoComponent,
     CompletedComponent,
-    AddComponent
+    AddComponent,
+    ListsComponent
   ],
   providers: [
     StatusBar,

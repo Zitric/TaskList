@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { TaskListService } from "../../providers/task-list.service";
-import { List } from "../../models";
 import { AlertController, NavController } from "ionic-angular";
 import { AddComponent } from "../add/add.component";
 
@@ -14,14 +13,6 @@ export class ToDoComponent {
   constructor( private service: TaskListService,
                private navCtrl: NavController,
                private alertCtrl: AlertController) { }
-
-  listSelected( list: List ) {
-    console.log('List',list);
-    this.navCtrl.push( AddComponent, {
-      name: list.name,
-      list: list
-    });
-  }
 
   addList() {
 
@@ -53,12 +44,4 @@ export class ToDoComponent {
     });
     alert.present();
   }
-
-  deleteList( list: List ) {
-    // this.service.lists.splice( index, 1 );
-    // this.service.saveStorage();
-    this.service.deleteList( list );
-    
-  }
-
 }

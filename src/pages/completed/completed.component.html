@@ -6,10 +6,6 @@
 
 <ion-content padding>
 
-  <ion-list>
-    <button ion-item *ngFor="let list of service.lists" (click)="listSelected(list)">
-      {{ list.name }}
-    </button>
-  </ion-list>
+  <app-lists [completed]="true"></app-lists>
 
 </ion-content>

@@ -33,11 +33,15 @@ export class AddComponent {
     }
   }
 
-  completeItem( item: ItemList ) {
+  updateItem( item: ItemList ) {
+
+    item.completed = !item.completed;
 
     const toDo = this.list.items.filter( itemData => {
       return !itemData.completed;
     }).length;
+
+    console.log('numero de items por completar',toDo);
 
     if ( toDo === 0 ) {
       this.list.completed = true;
@@ -47,7 +51,6 @@ export class AddComponent {
       this.list.completedAt = null;
     }
 
-    item.completed = true;
     this.service.saveStorage();
   }
 
